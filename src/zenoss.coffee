@@ -17,7 +17,6 @@
 
 #Base64 encode user:pass.
 btoa = require "btoa"
-#TODO: don't use my own!
 auth = "Basic " + btoa(process.env.ZENOSS_USERNAME + ':'
   + process.env.ZENOSS_PASSWORD)
 module.exports = (robot) ->
@@ -66,5 +65,3 @@ module.exports = (robot) ->
               result.data.events.error.count + " error, " +
               result.data.events.critical.count + " critical, " +
               result.data.events.warning.count + " warn)")
-  robot.hear /orly/, (res) ->
-    res.send "yarly"
